@@ -210,7 +210,6 @@ class FunnelGraph {
             if (index !== 0) {
                 const style = percentage[1] === 0 ? `color: #21ffa2; background-color: ${bgColor};` 
                     : `background-color: ${bgColor};`;
-                    
                 dropOffs.setAttribute('style', style);
                 const val = percentage[1] * -1;
                 dropOffs.textContent = `${val.toString()}%`;
