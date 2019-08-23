@@ -1,6 +1,6 @@
 {
   "name": "funnel-graph-js-xl",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "funnel-graph-js library with added features",
   "main": "main.js",
   "scripts": {

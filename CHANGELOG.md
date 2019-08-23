@@ -1,4 +1,8 @@
 
+### 1.0.7 (Aug 23, 2019)
+
+* Added default background color and option to select background color
+
 ### 1.0.6 (Aug 19, 2019)
 
 * Dropoff percentages positioning fixed

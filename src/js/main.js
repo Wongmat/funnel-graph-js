@@ -32,6 +32,7 @@ class FunnelGraph {
         this.height = options.height;
         this.width = options.width;
         this.subLabelValue = options.subLabelValue || 'percent';
+        this.backgroundColor = options.backgroundColor || '#132f4b';
     }
 
     /**
@@ -180,8 +181,6 @@ class FunnelGraph {
     addLabels() {
         const holder = document.createElement('div');
         holder.setAttribute('class', 'svg-funnel-js__labels');
-        const body = document.querySelector('body');
-        const bgColor = window.getComputedStyle(body).getPropertyValue('background-color');
 
         this.percentages.forEach((percentage, index) => {
             const labelElement = document.createElement('div');
@@ -208,8 +207,8 @@ class FunnelGraph {
             dropOffs.setAttribute('class', 'label__dropoffs');
 
             if (index !== 0) {
-                const style = percentage[1] === 0 ? `color: #21ffa2; background-color: ${bgColor};` 
-                    : `background-color: ${bgColor};`;
+                const style = percentage[1] === 0 ? `color: #21ffa2; background-color: ${this.backgroundColor};` 
+                    : `background-color: ${this.backgroundColor};`;
                 dropOffs.setAttribute('style', style);
                 const val = percentage[1] * -1;
                 dropOffs.textContent = `${val.toString()}%`;
@@ -275,6 +274,7 @@ class FunnelGraph {
 
         this.container = document.querySelector(this.containerSelector);
         this.container.classList.add('svg-funnel-js');
+        this.container.setAttribute('style', `background-color:${this.backgroundColor};`);
 
         this.graphContainer = document.createElement('div');
         this.graphContainer.classList.add('svg-funnel-js__container');

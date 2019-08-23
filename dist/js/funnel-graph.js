@@ -174,6 +174,7 @@ function () {
     this.height = options.height;
     this.width = options.width;
     this.subLabelValue = options.subLabelValue || 'percent';
+    this.backgroundColor = options.backgroundColor || '#132f4b';
   }
   /**
   An example of a two-dimensional funnel graph
@@ -313,8 +314,6 @@ function () {
 
       var holder = document.createElement('div');
       holder.setAttribute('class', 'svg-funnel-js__labels');
-      var body = document.querySelector('body');
-      var bgColor = window.getComputedStyle(body).getPropertyValue('background-color');
       this.percentages.forEach(function (percentage, index) {
         var labelElement = document.createElement('div');
         labelElement.setAttribute('class', "svg-funnel-js__label label-".concat(index + 1));
@@ -336,8 +335,7 @@ function () {
         dropOffs.setAttribute('class', 'label__dropoffs');
 
         if (index !== 0) {
-          console.log(bgColor);
-          var style = percentage[1] === 0 ? "color: #21ffa2; background-color: ".concat(bgColor, ";") : "background-color: ".concat(bgColor, ";");
+          var style = percentage[1] === 0 ? "color: #21ffa2; background-color: ".concat(_this.backgroundColor, ";") : "background-color: ".concat(_this.backgroundColor, ";");
           dropOffs.setAttribute('style', style);
           var val = percentage[1] * -1;
           dropOffs.textContent = "".concat(val.toString(), "%");
@@ -397,6 +395,7 @@ function () {
 
       this.container = document.querySelector(this.containerSelector);
       this.container.classList.add('svg-funnel-js');
+      this.container.setAttribute('style', "background-color:".concat(this.backgroundColor, ";"));
       this.graphContainer = document.createElement('div');
       this.graphContainer.classList.add('svg-funnel-js__container');
       this.container.appendChild(this.graphContainer);
