@@ -1,6 +1,6 @@
 {
   "name": "funnel-graph-js-xl",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "funnel-graph-js library with added features",
   "main": "main.js",
   "scripts": {
@@ -42,13 +42,12 @@
     "gulp-eslint": "^5.0.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^4.0.2",
-    "gulp-sass-lint": "^1.4.0",
     "gulp-streamify": "^1.0.2",
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
     "mocha": "^5.2.0",
     "nyc": "^13.3.0",
     "vinyl-source-stream": "^2.0.0"
-  }
+  },
+  "dependencies": {}
 }

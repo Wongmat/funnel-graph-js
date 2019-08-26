@@ -1,3 +1,6 @@
+### 1.0.8 (Aug 26, 2019)
+
+* Removed Sass support, compiled .scss files to .css
 
 ### 1.0.7 (Aug 23, 2019)
 
