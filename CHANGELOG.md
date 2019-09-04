@@ -1,3 +1,7 @@
+### 1.1.0 (Sept 4, 2019)
+
+* Changes did not go through correctly from last version
+
 ### 1.0.9 (Sept 4, 2019)
 
 * Changed label padding-left from 24px to 15px

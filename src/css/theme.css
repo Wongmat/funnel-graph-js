@@ -80,7 +80,7 @@ body {
   padding-bottom: 16px;
 }
 .svg-funnel-js:not(.svg-funnel-js--vertical) .svg-funnel-js__label {
-  padding-left: 24px;
+  padding-left: 15px;
 }
 .svg-funnel-js:not(.svg-funnel-js--vertical) .svg-funnel-js__label:not(:first-child) {
   border-left: 1px solid #9896dc;
