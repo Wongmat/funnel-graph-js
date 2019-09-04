@@ -1,3 +1,7 @@
+### 1.0.9 (Sept 4, 2019)
+
+* Changed label padding-left from 24px to 15px
+
 ### 1.0.8 (Aug 26, 2019)
 
 * Removed Sass support, compiled .scss files to .css
