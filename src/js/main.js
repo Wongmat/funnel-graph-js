@@ -292,8 +292,8 @@ class FunnelGraph {
 
         if (document.querySelector('.svg-funnel-js')) {
             const node = document.querySelector(this.containerSelector);
-            node.innerHTML = "";
-            this.container.classList.remove('svg-funnel-js');
+            node.innerHTML = '';
+            this.container.className = '';
         }
     }
 

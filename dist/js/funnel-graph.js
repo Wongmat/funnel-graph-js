@@ -413,8 +413,8 @@ function () {
 
       if (document.querySelector('.svg-funnel-js')) {
         var node = document.querySelector(this.containerSelector);
-        node.innerHTML = "";
-        this.container.classList.remove('svg-funnel-js');
+        node.innerHTML = '';
+        this.container.className = '';
       }
     }
   }, {

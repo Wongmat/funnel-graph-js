@@ -50,13 +50,15 @@
         <button id="gradientMakeVertical">Gradient Make Vertical</button>
         <button id="gradientMakeHorizontal">Gradient Make Horizontal</button>
         <button id="gradientToggleDirection">Gradient Toggle Direction</button>
+        <button id="destroy">Destroy</button>
+        <button id="update">Update</button>
     </div>
 
     <script src="../dist/js/funnel-graph.js"></script>
     <script>
         var dataExample1 = {
             labels: ["started","underwriting","submitted"],
-            sublabels: ["vhis-flexi-plus","vhis-flexi-regular","vhis-standard"],
+            subLabels: ["vhis-flexi-plus","vhis-flexi-regular","vhis-standard"],
             colors:  [
                 ['#FFB178', '#FF78B1', '#FF3C8E'],
                 ['#A0BBFF', '#EC77FF'],
@@ -72,14 +74,14 @@
         };
 
         var dataExample3 = {
-            labels: ["start","pre-agreement","underwriting","quotation","affordability","personal-info","document","auth","summary","terms-and-conditions","payment","submitted"],
+            labels: ["start","pre-agreement","underwriting","quotation"],
             subLabels: ["vhis-flexi-plus","vhis-flexi-regular","vhis-standard"],
             colors: [
                 ['#FFB178', '#FF78B1', '#FF3C8E'],
                 ['#A0BBFF', '#EC77FF'],
                 ['#A0F9FF', '#7795FF']
             ],
-            values: [[34,241,96],[22,124,60],[19,119,57],[7,44,23],[4,31,16],[4,28,18],[4,14,6],[3,13,6],[4,10,5],[4,8,5],[4,8,5],[4,7,5]]
+            values: [[34,241,96],[22,124,60],[19,50,57]]
         };
 
         var graph = new FunnelGraph({
@@ -124,6 +126,14 @@
 
         document.querySelector('#gradientToggleDirection').addEventListener('click', function () {
             graph.gradientToggleDirection();
+        });
+
+        document.querySelector('#destroy').addEventListener('click', function () {
+            graph.destroy();
+        });
+
+        document.querySelector('#update').addEventListener('click', function () {
+            graph.updateData({values: [[34,241,96],[22,124,60],[1,1,1]], labels: ['no', 'yes', 'ok']});
         });
 
     </script>

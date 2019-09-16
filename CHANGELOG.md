@@ -1,3 +1,8 @@
+### 1.1.1 (Sept 16, 2019)
+
+* destroy() now clears all classes from the container
+* Added buttons to test update() and destroy() in example.html
+
 ### 1.1.0 (Sept 4, 2019)
 
 * Changes did not go through correctly from last version
