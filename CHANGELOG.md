@@ -1,3 +1,7 @@
+### 1.1.4 Sept 16, 2019)
+
+* Dropoff percentage position fixes
+
 ### 1.1.3 (Sept 16, 2019)
 
 * refactored CSS

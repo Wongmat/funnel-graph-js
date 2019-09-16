@@ -41,7 +41,7 @@ body {
   position: absolute;
   display: flex;
   flex-direction: column;
-  width: 6ch;
+  width: fit-content;
   text-align: center;
   justify-content: flex-end;
   height: 100%;
@@ -51,6 +51,7 @@ body {
   font-weight: bold;
   margin: 0;
   color: #ff001e;
+  width: 6ch;
 }
 
 .dropoff_text_zero {
@@ -58,6 +59,7 @@ body {
   font-weight: bold;
   margin: 0;
   color: #21ffa2;
+  width: 6ch;
 }
 .label__segment-percentages {
   position: absolute;
@@ -122,6 +124,7 @@ body {
 }
 .svg-funnel-js.svg-funnel-js--vertical .label__dropoff_container {
   top: -0.8em;
+  right: -2.5em;
   position: absolute;
   display: flex;
   flex-direction: row;
