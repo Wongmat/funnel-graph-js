@@ -204,14 +204,16 @@ class FunnelGraph {
             }
 
             const dropOffs = document.createElement('div');
-            dropOffs.setAttribute('class', 'label__dropoffs');
+            dropOffs.setAttribute('class', 'label__dropoff_container');
 
             if (index !== 0) {
-                const style = percentage[1] === 0 ? `color: #21ffa2; background-color: ${this.backgroundColor};` 
-                    : `background-color: ${this.backgroundColor};`;
-                dropOffs.setAttribute('style', style);
+                const className = percentage[1] === 0 ? 'dropoff_text_zero' : 'dropoff_text_percentage';
+                const dropOffText = document.createElement('p');
+                dropOffText.setAttribute('class', className);
+                dropOffText.setAttribute('style', `background-color: ${this.backgroundColor};`);
                 const val = percentage[1] * -1;
-                dropOffs.textContent = `${val.toString()}%`;
+                dropOffText.textContent = `${val.toString()}%`;
+                dropOffs.appendChild(dropOffText);
             }
 
             labelElement.appendChild(value);

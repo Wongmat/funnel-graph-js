@@ -332,13 +332,16 @@ function () {
         }
 
         var dropOffs = document.createElement('div');
-        dropOffs.setAttribute('class', 'label__dropoffs');
+        dropOffs.setAttribute('class', 'label__dropoff_container');
 
         if (index !== 0) {
-          var style = percentage[1] === 0 ? "color: #21ffa2; background-color: ".concat(_this.backgroundColor, ";") : "background-color: ".concat(_this.backgroundColor, ";");
-          dropOffs.setAttribute('style', style);
+          var className = percentage[1] === 0 ? 'dropoff_text_zero' : 'dropoff_text_percentage';
+          var dropOffText = document.createElement('p');
+          dropOffText.setAttribute('class', className);
+          dropOffText.setAttribute('style', "background-color: ".concat(_this.backgroundColor, ";"));
           var val = percentage[1] * -1;
-          dropOffs.textContent = "".concat(val.toString(), "%");
+          dropOffText.textContent = "".concat(val.toString(), "%");
+          dropOffs.appendChild(dropOffText);
         }
 
         labelElement.appendChild(value);
@@ -414,7 +417,8 @@ function () {
       if (document.querySelector('.svg-funnel-js')) {
         var node = document.querySelector(this.containerSelector);
         node.innerHTML = '';
-        this.container.className = '';
+        this.container.classList.remove('svg-funnel-js');
+        this.container.classList.remove('svg-funnel-js--vertical');
       }
     }
   }, {
