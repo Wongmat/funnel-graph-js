@@ -1,3 +1,7 @@
+### 1.1.2 (Sept 16, 2019)
+
+* destroy() changed to only remove 'svg-funnel-js' and 'svg-funnel-js--vertical' classes
+
 ### 1.1.1 (Sept 16, 2019)
 
 * destroy() now clears all classes from the container
