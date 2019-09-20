@@ -1,3 +1,7 @@
+### 1.1.6 Sept 20, 2019)
+
+* Changed log scale colours to yellow and red only 
+
 ### 1.1.5 Sept 20, 2019)
 
 * Added log scale colours to dropoff percentages

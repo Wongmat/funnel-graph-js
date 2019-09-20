@@ -50,17 +50,9 @@ body {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  color: #ff001e;
   width: 6ch;
 }
 
-.dropoff_text_zero {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-  color: #21ffa2;
-  width: 6ch;
-}
 .label__segment-percentages {
   position: absolute;
   top: 50%;

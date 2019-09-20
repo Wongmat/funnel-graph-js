@@ -135,14 +135,11 @@ exports["default"] = exports.getDropoffColor = void 0;
 
 var getDropoffColor = function getDropoffColor(rawPerc, min, max) {
   var base = max - min;
-  var perc = base === 0 ? 100 : (rawPerc - min) / base * 100; // const r = perc < 20 ? Math.round(12.5 * perc) : 255;
-  // const g = perc < 20 ? 255 : Math.round(510 - 12.5 * perc);
-
-  var r = 255 * Math.log2(max + perc) - 16.9435 * max;
-  var g = -255 * Math.log2(max + perc) + 19.4919 * max;
+  var perc = base === 0 ? 100 : (rawPerc - min) / base * 100;
+  var r = perc === 0 ? 0 : 255;
+  var g = perc === 0 ? 255 : 255 - 255 * Math.log10(Math.round(perc)) / 2;
   var b = 60;
-  var h = Math.round(r) * 0x10000 + Math.round(g) * 0x100 + b * 0x1;
-  console.log(perc, Math.round(r), Math.round(g), b);
+  var h = r * 0x10000 + Math.round(g) * 0x100 + b * 0x1;
   return "#".concat("000000".concat(h.toString(16)).slice(-6));
 };
 
@@ -364,10 +361,9 @@ function () {
         dropOffs.setAttribute('class', 'label__dropoff_container');
 
         if (index !== 0) {
-          var className = percentage[1] === 0 ? 'dropoff_text_zero' : 'dropoff_text_percentage';
           var dropOffText = document.createElement('p');
           var color = (0, _helpers.getDropoffColor)(percentage[1], 0, 100);
-          dropOffText.setAttribute('class', className);
+          dropOffText.setAttribute('class', 'dropoff_text_percentage');
           dropOffText.setAttribute('style', "background-color: ".concat(_this.backgroundColor, "; color: ").concat(color, ";"));
           var val = percentage[1] * -1;
           dropOffText.textContent = "".concat(val.toString(), "%");
