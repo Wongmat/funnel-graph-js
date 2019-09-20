@@ -1,3 +1,8 @@
+### 1.1.5 Sept 20, 2019)
+
+* Added log scale colours to dropoff percentages
+* Fixed readme and package.json to properly give credit 
+
 ### 1.1.4 Sept 16, 2019)
 
 * Dropoff percentage position fixes

@@ -1,8 +1,6 @@
 export const getDropoffColor = (rawPerc, min, max) => {
     const base = (max - min);
     const perc = base === 0 ? 100 : (rawPerc - min) / base * 100;
-    // const r = perc < 20 ? Math.round(12.5 * perc) : 255;
-    // const g = perc < 20 ? 255 : Math.round(510 - 12.5 * perc);
     const r = 255 * Math.log2(max + perc) - 16.9435 * max;
     const g = -255 * Math.log2(max + perc) + 19.4919 * max;
     const b = 60;
