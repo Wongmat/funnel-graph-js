@@ -1,17 +1,17 @@
 {
   "name": "funnel-graph-js-xl",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "funnel-graph-js library with added features",
   "main": "main.js",
   "scripts": {
     "start": "gulp",
     "test": "nyc mocha --compilers js:babel-core/register"
   },
-  "author": "Mat Wong",
+  "author": "Mat Wong, forked from funnel-graph-js by Greg Hovanesyan",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/greghub/funnel-graph-js.git"
+    "url": "https://github.com/Wongmat/funnel-graph-js-xl.git"
   },
   "keywords": [
     "funnel",

@@ -14,6 +14,9 @@ import {
     setAttrs,
     removeAttrs
 } from './graph';
+import {
+    getDropoffColor
+} from './helpers';
 
 class FunnelGraph {
     constructor(options) {
@@ -207,10 +210,10 @@ class FunnelGraph {
             dropOffs.setAttribute('class', 'label__dropoff_container');
 
             if (index !== 0) {
-                const className = percentage[1] === 0 ? 'dropoff_text_zero' : 'dropoff_text_percentage';
                 const dropOffText = document.createElement('p');
-                dropOffText.setAttribute('class', className);
-                dropOffText.setAttribute('style', `background-color: ${this.backgroundColor};`);
+                const color = getDropoffColor(percentage[1], 0, 100);
+                dropOffText.setAttribute('class', 'dropoff_text_percentage');
+                dropOffText.setAttribute('style', `background-color: ${this.backgroundColor}; color: ${color};`);
                 const val = percentage[1] * -1;
                 dropOffText.textContent = `${val.toString()}%`;
                 dropOffs.appendChild(dropOffText);

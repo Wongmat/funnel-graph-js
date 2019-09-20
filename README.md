@@ -1,12 +1,10 @@
 # FunnelGraph.js with extra features 
 
-![npm](https://img.shields.io/npm/v/funnel-graph-js.svg)
-[![Build Status](https://travis-ci.org/greghub/funnel-graph-js.svg?branch=master)](https://travis-ci.org/greghub/funnel-graph-js)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/greghub/funnel-graph-js/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/greghub/funnel-graph-js/?branch=master)
-![GitHub file size in bytes](https://img.shields.io/github/size/greghub/funnel-graph-js/dist/js/funnel-graph.min.js.svg)
-![GitHub](https://img.shields.io/github/license/greghub/funnel-graph-js.svg)
-![GitHub last commit](https://img.shields.io/github/last-commit/greghub/funnel-graph-js.svg)
-[![Gitter](https://img.shields.io/gitter/room/greghub/funnel-graph-js.svg)](https://gitter.im/funnel-graph-js/community)
+This is an expanded version of Funnel Graph JS by Greg Hovanesyan with a few added features that we needed at our org. This includes features such as a destroy() function, and dropoff percentages that showed the changes from section to section.
+
+The original Funnel Graph JS can be found at https://github.com/greghub/funnel-graph-js.
+
+# About Funnel Graph JS
 
 Funnel Graph JS is a library for generating a funnel chart. It generates an SVG chart, adds labels, legend and other info.
 Some of the features include generating horizontal and vertical funnel charts, applying solid colors and gradients,

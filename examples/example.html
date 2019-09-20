@@ -14,7 +14,7 @@
 
         body {
             margin: 0;
-            background: #393862;
+            background: #132f4b;
         }
 
         .funnel {
@@ -74,14 +74,72 @@
         };
 
         var dataExample3 = {
-            labels: ["start","pre-agreement","underwriting","quotation"],
+            labels: ["start",
+,"pre-agreement/utmost-good-faith"
+,"pre-agreement/residency-confirmation"
+,"underwriting/splash"
+,"underwriting/relationship"
+,"underwriting/gender"
+,"underwriting/date_of_birth"
+,"underwriting/smoker"
+,"underwriting/occupation"
+,"underwriting/height_in_cm"
+, "underwriting/health_status"
+, "underwriting/organs"
+, "underwriting/tumour_or_cancer"
+, "underwriting/body_check"
+, "underwriting/history_of_medical_engagement"
+, "underwriting/pending_medical_attention"
+, "underwriting/family_history"
+, "underwriting/history_of_rejection"
+, "underwriting/doubt"
+, "quotation"
+, "quotation"
+, "affordability"
+, "personal-info"
+, "document"
+, "auth"
+, "summary"
+, "terms-and-conditions"
+, "payment"
+, "submitted"],
             subLabels: ["vhis-flexi-plus","vhis-flexi-regular","vhis-standard"],
             colors: [
                 ['#FFB178', '#FF78B1', '#FF3C8E'],
                 ['#A0BBFF', '#EC77FF'],
                 ['#A0F9FF', '#7795FF']
             ],
-            values: [[34,241,96],[22,124,54],[22,124,54]]
+            
+            values: [[85, 56, 359],
+[52, 30, 172],
+[47, 27, 150],
+[47, 26, 146],
+[45, 26, 139],
+[44, 25, 135],
+[44, 24, 135],
+[38, 21, 116],
+[38, 21, 115],
+[37, 20, 103],
+ [33, 20, 98],
+ [34, 20, 97],
+ [32, 20, 93],
+ [32, 20, 93],
+ [32, 20, 92],
+ [32, 20, 89],
+ [32, 20, 87],
+ [32, 20, 87],
+ [32, 20, 85],
+ [31, 16, 89],
+ [31, 16, 89],
+ [17, 8, 48],
+ [14, 8, 46],
+ [5, 3, 2],
+ [4, 3, 2],
+ [3, 2, 2],
+ [2, 2, 2],
+ [1, 1, 1],
+ [0, 1, 0],
+],
         };
 
         var graph = new FunnelGraph({
@@ -89,9 +147,9 @@
             gradientDirection: 'horizontal',
             data: dataExample3,
             displayPercent: true,
-            direction: 'horizontal',
-            width: 1500,
-            height: 300,
+            direction: 'vertical',
+            width: 500,
+            height: 3600,
             subLabelValue: 'percent'
         });
 

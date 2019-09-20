@@ -3,7 +3,7 @@
 
 module.exports = require('./src/js/main')["default"];
 
-},{"./src/js/main":3}],2:[function(require,module,exports){
+},{"./src/js/main":4}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -131,6 +131,33 @@ exports.areEqual = areEqual;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports["default"] = exports.getDropoffColor = void 0;
+
+var getDropoffColor = function getDropoffColor(rawPerc, min, max) {
+  var base = max - min;
+  var perc = base === 0 ? 100 : (rawPerc - min) / base * 100; // const r = perc < 20 ? Math.round(12.5 * perc) : 255;
+  // const g = perc < 20 ? 255 : Math.round(510 - 12.5 * perc);
+
+  var r = 255 * Math.log2(max + perc) - 16.9435 * max;
+  var g = -255 * Math.log2(max + perc) + 19.4919 * max;
+  var b = 60;
+  var h = Math.round(r) * 0x10000 + Math.round(g) * 0x100 + b * 0x1;
+  console.log(perc, Math.round(r), Math.round(g), b);
+  return "#".concat("000000".concat(h.toString(16)).slice(-6));
+};
+
+exports.getDropoffColor = getDropoffColor;
+var _default = {
+  getDropoffColor: getDropoffColor
+};
+exports["default"] = _default;
+
+},{}],4:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports["default"] = void 0;
 
 var _number = require("./number");
@@ -138,6 +165,8 @@ var _number = require("./number");
 var _path = require("./path");
 
 var _graph = require("./graph");
+
+var _helpers = require("./helpers");
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -337,8 +366,9 @@ function () {
         if (index !== 0) {
           var className = percentage[1] === 0 ? 'dropoff_text_zero' : 'dropoff_text_percentage';
           var dropOffText = document.createElement('p');
+          var color = (0, _helpers.getDropoffColor)(percentage[1], 0, 100);
           dropOffText.setAttribute('class', className);
-          dropOffText.setAttribute('style', "background-color: ".concat(_this.backgroundColor, ";"));
+          dropOffText.setAttribute('style', "background-color: ".concat(_this.backgroundColor, "; color: ").concat(color, ";"));
           var val = percentage[1] * -1;
           dropOffText.textContent = "".concat(val.toString(), "%");
           dropOffs.appendChild(dropOffText);
@@ -900,7 +930,7 @@ function () {
 var _default = FunnelGraph;
 exports["default"] = _default;
 
-},{"./graph":2,"./number":4,"./path":5}],4:[function(require,module,exports){
+},{"./graph":2,"./helpers":3,"./number":5,"./path":6}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -920,7 +950,7 @@ var formatNumber = function formatNumber(number) {
 
 exports.formatNumber = formatNumber;
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1015,5 +1045,5 @@ var createVerticalPath = function createVerticalPath(index, X, XNext, Y) {
 
 exports.createVerticalPath = createVerticalPath;
 
-},{"./number":4}]},{},[1])(1)
+},{"./number":5}]},{},[1])(1)
 });
