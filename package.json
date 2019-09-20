@@ -7,11 +7,11 @@
     "start": "gulp",
     "test": "nyc mocha --compilers js:babel-core/register"
   },
-  "author": "Mat Wong",
+  "author": "Mat Wong, forked from funnel-graph-js by Greg Hovanesyan",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/greghub/funnel-graph-js.git"
+    "url": "https://github.com/Wongmat/funnel-graph-js-xl.git"
   },
   "keywords": [
     "funnel",
