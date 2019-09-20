@@ -136,8 +136,8 @@ exports["default"] = exports.getDropoffColor = void 0;
 var getDropoffColor = function getDropoffColor(rawPerc, min, max) {
   var base = max - min;
   var perc = base === 0 ? 100 : (rawPerc - min) / base * 100;
-  var r = perc === 0 ? 0 : 255;
-  var g = perc === 0 ? 255 : 255 - 255 * Math.log10(Math.round(perc)) / 2;
+  var r = perc <= 0 ? 0 : 255;
+  var g = perc <= 0 ? 255 : 255 - 255 * Math.log10(perc > 0 && perc < 1 ? 1 : perc) / 2;
   var b = 60;
   var h = r * 0x10000 + Math.round(g) * 0x100 + b * 0x1;
   return "#".concat("000000".concat(h.toString(16)).slice(-6));

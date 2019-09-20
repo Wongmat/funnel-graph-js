@@ -1,3 +1,7 @@
+### 1.1.7 Sept 20, 2019)
+
+* Fixed rounding error that caused colours to not show for < 1% 
+
 ### 1.1.6 Sept 20, 2019)
 
 * Changed log scale colours to yellow and red only 
